@@ -1,0 +1,59 @@
+* {
+    font-family: 'Abel', sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Vollkorn', serif;
+
+}
+
+#container {
+    margin: 0;
+    padding: 0;
+}
+
+#map {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 60vw;
+    height: 100vh;
+}
+
+#main {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 40vw;
+    height: 100vh;
+}
+
+#main-content {
+    padding: 20px 50px;
+}
+
+#main {
+    overflow-y: scroll;
+}
+
+@media (max-width:768px) {
+    #map {
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 40vh;
+        width: 100vw;
+    }
+    #main {
+        position: absolute;
+        left: 0;
+        top: 40vh;
+        height: 60vh;
+        width: 100vw
+    }
+}
