@@ -27,11 +27,11 @@ $(function() {
 function getGoogleSheetData() {
     /*
     https://spreadsheets.google.com/feeds/worksheets/1YF2XPf6QTuod-AN31eT6-Rmj88xs5SoNAbCQ90hNf44/public/basic?alt=json
-    https://spreadsheets.google.com/feeds/list/1YF2XPf6QTuod-AN31eT6-Rmj88xs5SoNAbCQ90hNf44/1279796839/public/values?alt=json
+    https://spreadsheets.google.com/feeds/list/1YF2XPf6QTuod-AN31eT6-Rmj88xs5SoNAbCQ90hNf44/ol5yhtp/public/values?alt=json
     */
     
     var spreadsheetID = '1YF2XPf6QTuod-AN31eT6-Rmj88xs5SoNAbCQ90hNf44';
-    var worksheetID = '1279796839'; // Sheet 1: orfa4yj
+    var worksheetID = 'ol5yhtp'; // Sheet 1: orfa4yj
     var url = 'https://spreadsheets.google.com/feeds/list/' + spreadsheetID + '/' + worksheetID + '/public/values?alt=json';
     
     /*
