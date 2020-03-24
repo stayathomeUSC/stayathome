@@ -31,8 +31,7 @@ function getGoogleSheetData() {
     */
     
     var spreadsheetID = '1idoceozUm7dTIIoou0wOnZcboPihWb7BldkVMKN5DMg';
-    var worksheetID = 'ol5yhtp'; // Sheet 1: orfa4yj
-    var url = 'https://spreadsheets.google.com/feeds/list/' + spreadsheetID + '/' + worksheetID + '/public/values?alt=json';
+    var url = 'https://spreadsheets.google.com/feeds/list/' + spreadsheetID'/public/values?alt=json';
     
     /*
      * Iterate through each 
