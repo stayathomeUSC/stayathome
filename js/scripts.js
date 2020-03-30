@@ -50,7 +50,7 @@ function getGoogleSheetData() {
         $('#main-content').append('<strong>Warnings: </strong><br>' + (warningString == '' ? 'No errors!' : warningString) + '<br><br>');
     }
 }
-
+var markers = L.markerClusterGroup();
 function displayOnPage(row, warningString) {
     var name = '';
     if (row.gsx$name.$t == '') {
@@ -60,10 +60,14 @@ function displayOnPage(row, warningString) {
     }
     
     var name_slug = name.replace(/\s+/g, '');
-    var markers = [];
+    // var markers = [];
     
     
-    
+// markers.addLayer(L.marker(getRandomLatLng(map)));
+// ... Add more layers ...
+// map.addLayer(markers);
+
+
     /*
      * Add marker for each location
      * provided by participant.
@@ -73,7 +77,7 @@ function displayOnPage(row, warningString) {
         var lng = row['gsx$location' + i + 'lng'].$t;
         var locationName = row['gsx$location' + i + 'name'].$t;
         var description = row['gsx$location' + i + 'description'].$t;
-        
+        console.log(lat)
         if (lat == '' || lng == '') {
             warningString += name + ' has no coordinates for Location ' + i + '.<br>';
         } else {
@@ -90,14 +94,15 @@ function displayOnPage(row, warningString) {
             var m = L.marker([lat, lng])
                 .on('click', onMarkerClick)
                 .bindPopup($locationInfo[0])
-                .addTo(mymap);
-            
-            markers.push(m);
+                // .addTo(mymap);
+            markers.addLayer(m);
+            // markers.addLayer(L.marker([lat,lng]));
+            // markers.push(m);
         }
         
-        overlayMaps[name_slug] = L.layerGroup(markers);
+        // overlayMaps[name_slug] = L.layerGroup(markers);
     }
-    
+    mymap.addLayer(markers);
     /* 
      * Add list entry for each participant
      * so that when their name is clicked,
