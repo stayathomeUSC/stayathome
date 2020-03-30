@@ -40,7 +40,7 @@ function getGoogleSheetData() {
      */
     $.getJSON(url, function(data) {
        $.each(data.feed.entry, function(i, val) {
-          "console.log(val)"
+          console.log(val)
            displayOnPage(val); 
        });
     });
