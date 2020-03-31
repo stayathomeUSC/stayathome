@@ -20,6 +20,8 @@ var overlayMaps = {
  * Pull data and display on page
  */
 $(function() {
+    // activate modal
+    $('#coronamodal').modal('show')
    getGoogleSheetData();
    L.control.layers(overlayMaps).addTo(mymap);
 });
@@ -122,6 +124,7 @@ function onMarkerClick(e) {
     
     var popup = e.target.getPopup();
     var content = popup.getContent();
-    $('#location-detail').html(content.innerHTML);
+    $('#main-content').html(content.innerHTML);
+    // $('#location-detail').html(content.innerHTML);
     event.target.closePopup();
 }
